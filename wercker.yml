@@ -5,12 +5,12 @@
 box: "elixir:1.3.4"
 # You can also use services such as databases. Read more on our dev center:
 # http://devcenter.wercker.com/docs/services/index.html
-# services:
-    # - postgres
-    # http://devcenter.wercker.com/docs/services/postgresql.html
-
-    # - mongo
-    # http://devcenter.wercker.com/docs/services/mongodb.html
+services:
+  # http://devcenter.wercker.com/docs/services/postgresql.html
+  - id: postgres
+    env:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
 
 # This is the build pipeline. Pipelines are the core of wercker
 # Read more about pipelines on our dev center
@@ -26,4 +26,5 @@ build:
           mix local.hex --force
           mix local.rebar --force
           mix deps.get
+          mix ecto.create ecto.migrate
           mix test
