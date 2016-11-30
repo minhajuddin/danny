@@ -26,5 +26,5 @@ build:
           mix local.hex --force
           mix local.rebar --force
           mix deps.get
-          mix ecto.create ecto.migrate
+          MIX_ENV=test mix ecto.create ecto.migrate
           mix test
