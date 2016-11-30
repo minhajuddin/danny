@@ -16,6 +16,7 @@ defmodule Danny.Router do
   scope "/", Danny do
     pipe_through :browser # Use the default browser stack
 
+    resources "/projects", ProjectController
     get "/", PageController, :index
   end
 
