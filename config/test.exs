@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :danny, Danny.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: System.get_env("POSTGRES_USER"),
-  password: System.get_env("POSTGRES_PASSWORD"),
+  username: System.get_env("APP_POSTGRES_USER"),
+  password: System.get_env("APP_POSTGRES_PASSWORD"),
   hostname: System.get_env("POSTGRES_PORT_5432_TCP_ADDR"),
-  database: "danny_test",
+  database: System.get_env("APP_POSTGRES_DB"),
   pool: Ecto.Adapters.SQL.Sandbox

@@ -22,6 +22,7 @@ build:
     - script:
         name: test
         code: |
+          env
           mix local.hex --force
           mix local.rebar --force
           mix deps.get
