@@ -10,6 +10,9 @@ services:
   - id: postgres
     env:
       MIX_ENV: test
+      POSTGRES_PASSWORD: "mujju pg"
+      POSTGRES_USER: "danny"
+      POSTGRES_DB: "danny_test"
 
 # This is the build pipeline. Pipelines are the core of wercker
 # Read more about pipelines on our dev center
@@ -22,7 +25,7 @@ build:
     - script:
         name: test
         code: |
-          env
+          env | sort -u
           mix local.hex --force
           mix local.rebar --force
           mix deps.get
