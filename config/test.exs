@@ -15,5 +15,5 @@ config :danny, Danny.Repo,
   username: System.get_env("APP_POSTGRES_USER"),
   password: System.get_env("APP_POSTGRES_PASSWORD"),
   hostname: System.get_env("POSTGRES_PORT_5432_TCP_ADDR"),
-  database: System.get_env("APP_POSTGRES_DB"),
+  database: "danny_test", #System.get_env("APP_POSTGRES_DB"),
   pool: Ecto.Adapters.SQL.Sandbox
