@@ -9,8 +9,7 @@ services:
   # http://devcenter.wercker.com/docs/services/postgresql.html
   - id: postgres
     env:
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_USER: postgres
+      MIX_ENV: test
 
 # This is the build pipeline. Pipelines are the core of wercker
 # Read more about pipelines on our dev center
