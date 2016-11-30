@@ -1,0 +1,13 @@
+session "danny"
+directory "/home/minhajuddin/os/danny"
+
+window "src", [
+  pane("vim TODO"),
+]
+
+window "server-iex", [
+  pane("iex -S mix phoenix.server"),
+  pane("git status"),
+]
+
+# vim: filetype=ruby

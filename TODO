@@ -1,0 +1,2 @@
+  - A simple CI server based on docker
+  - Reads a simple configuration and runs the build
