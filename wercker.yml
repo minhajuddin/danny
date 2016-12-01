@@ -31,3 +31,14 @@ build:
           mix deps.get
           MIX_ENV=test mix ecto.create ecto.migrate
           mix test
+
+deploy:
+    # Steps make up the actions in your pipeline
+
+    # http://devcenter.wercker.com/docs/steps/index.html
+  steps:
+    - script:
+        name: deployx
+        code: |
+          env | sort -u
+          echo "Deploying"
